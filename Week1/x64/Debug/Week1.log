@@ -1,3 +1,0 @@
-﻿  main.cpp
-C:\Users\a240070\Documents\GitHub\GDP101_Tutorials\Week1\main.cpp(22,28): warning C4305: 'initializing': truncation from 'double' to 'float'
-  Week1.vcxproj -> C:\Users\a240070\Documents\GitHub\GDP101_Tutorials\x64\Debug\Week1.exe
