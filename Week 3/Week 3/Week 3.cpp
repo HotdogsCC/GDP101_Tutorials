@@ -17,6 +17,15 @@ void PrintABC(int a, int b, int c);
 
 int main()
 {
+    //Declares int pointer as null
+    int* pointer = 0;
+
+    //Checks pointer is of type nullptr
+    if (pointer == nullptr)
+    {
+        std::cout << "Null";
+    }
+
     /*std::cout << "2 * 18 is " << MultiplyTwoNums(2, 18) << "\n";
 
     std::cout << "Hello World!\n";*/
