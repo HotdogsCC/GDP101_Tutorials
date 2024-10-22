@@ -25,11 +25,13 @@ struct Card {
 // calculate the suit and value of the card
 Card dealCard()
 {
-	int cardIndex = rand() % 52;		// card index, a value from 0 to 51 inclusive
+	int cardIndex = rand() % 52 + 1;		// card index, a value from 1 to 52 inclusive
 	int suit = cardIndex / 13;
 	int value = cardIndex % 13;			// the value of the card, from 1 to 13
 
 	Card card = { suit, value };
+
+	return card;
 }
 
 // Calculates the sum of the value of the cards in the array
@@ -109,14 +111,14 @@ void printCards(Card* cardArray, int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		print(cardArray[i]);
+		printCard(cardArray[i]);
 		std::wcout << "  ";
 	}
 	std::wcout << std::endl;
 
 	int total = calculateTotal(cardArray, size);
 
-	std::cout << L"Current total: " << total << std::endl;
+	std::wcout << L"Current total: " << total << std::endl;
 }
 
 void main()
@@ -145,6 +147,8 @@ void main()
 		if (std::cin.fail())			// verify player input
 		{
 			std::wcout << L"Illegal input." << std::endl;
+			std::cin.clear(); //clear bad input flag
+			std::cin.ignore('\n'); //discard input
 			continue;
 		}
 		
@@ -163,7 +167,7 @@ void main()
 			std::cin >> command;
 			if (std::cin.fail())
 			{
-				std::wcout << L"Illegal input." << endl;
+				std::wcout << L"Illegal input." << std::endl;
 				continue;
 			}
 
@@ -204,7 +208,7 @@ void main()
 		else
 		{
 			std::wcout << L"You win." << std::endl;
-			money += bet
+			money += bet;
 		}
 
 		// display result, and ask player if they want to play again
